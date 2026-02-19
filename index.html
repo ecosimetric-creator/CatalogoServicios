@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+  <title>Catálogo de Servicios MIMP</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<!-- ENCABEZADO INSTITUCIONAL -->
+<header class="topbar">
+  <div class="brand">
+    <h1>Catálogo de Servicios del Sector Mujer y Poblaciones Vulnerables</h1>
+
+    <p class="subtitle">
+      Aprobado mediante Resolución Ministerial N° 046-2026-MIMP
+    </p>
+
+    
+  </div>
+
+
+  <div class="header-actions">
+
+
+    <input id="search" class="input" placeholder="Buscar servicio, pliego, ejecutora…">
+
+    <select id="filterTipo" class="input"><option value="">Todas las tipologías</option></select>
+
+    <button id="reset" class="btn">Limpiar</button>
+
+    <a 
+      href="https://www.gob.pe/institucion/mimp/normas-legales/7693547-046-2026-mimp"
+      target="_blank"
+      class="btn-normativa">
+      Normativa
+    </a>
+
+    
+  </div>
+</header>
+
+<div class="top-categoria-panel">
+  <h2 class="left-title">CATEGORÍA DEL PÚBLICO</h2>
+  <hr>
+  <nav id="categoriaPublicoTopList" class="top-program-list"></nav>
+</div>
+
+<!-- ÁREA PRINCIPAL DE 3 COLUMNAS -->
+<div class="layout">
+
+  <!-- IZQUIERDA -->
+    <aside class="leftpanel">
+
+      <div class="panel-box">
+        <h2 class="left-title">PROVEEDORES</h2>
+        <hr></hr>
+        <nav id="programs" class="program-list"></nav>
+      </div>
+
+      <div class="panel-box">
+        <h2 class="left-title">TIPO DE SERVICIO</h2>
+        <hr></hr>
+        <nav id="tipoList" class="program-list"></nav>
+      </div>
+
+      
+    </aside>
+
+
+  <!-- CENTRO -->
+  <main class="catalog-area">
+        <div class="catalog-header">
+          <h2>
+            Total <span id="count" class="muted"></span>
+          </h2>
+
+          <button id="exportExcel" class="export-btn">
+            📊 Exportar resultados a Excel
+          </button>
+        </div>
+
+    <!-- 🔵 PAGER SUPERIOR -->
+    <div class="top-pager-wrapper">
+
+      <div class="pager top-pager">
+
+        <button id="firstTop" class="btn small nav-btn">⏮</button>
+        <button id="prevTop" class="btn small nav-btn">Anterior</button>
+
+        <span id="pageNumbersTop" class="page-numbers"></span>
+
+        <button id="nextTop" class="btn small nav-btn">Siguiente</button>
+        <button id="lastTop" class="btn small nav-btn">⏭</button>
+
+      </div>
+
+      <div id="pagerInfoTop" class="pager-info-top"></div>
+
+    </div>
+
+    
+
+    <section id="cards" class="cards-stack"></section>
+
+  <!-- 🔵 PAGER INFERIOR -->
+  <div class="pager">
+  
+
+    <button id="first" class="btn small nav-btn">⏮</button>
+    <button id="prev" class="btn small nav-btn">Anterior</button>
+
+    <span id="pageNumbers" class="page-numbers"></span>
+
+    <button id="next" class="btn small nav-btn">Siguiente</button>
+    <button id="last" class="btn small nav-btn">⏭</button>
+
+  </div>
+
+  <div id="pagerInfo" class="pager-info"></div>
+    
+  </main>
+
+  <!-- DERECHA -->
+  <aside class="detail-area">
+    <div id="detailCard" class="detail-card">
+      <h2 id="detailTitle">Seleccione un servicio</h2>
+      <div id="detailMeta" class="meta muted"></div>
+      <div id="detailBody" class="detail-body">
+        <p class="muted">Seleccione un servicio para ver la ficha completa.</p>
+      </div>
+    </div>
+
+   </aside>
+
+</div>
+
+<footer class="footer">
+  Catálogo de servicios del Sector Mujer y Poblaciones Vulnerables - Uso interno del Sector.
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

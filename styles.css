@@ -1,0 +1,1106 @@
+:root {
+
+  /* Paleta institucional refinada */
+  --primary: #C62828;        /* rojo institucional elegante */
+  --primary-soft: #FDECEC;   /* fondo suave del rojo */
+  --dark: #2C2C2C;
+  --medium: #6F6F6F;
+  --light: #C6C6C6;
+
+  /* Sistema */
+  --bg: #F4F6F9;
+  --card: #ffffff;
+  --border: #E8E8E8;
+  --shadow: 0 8px 24px rgba(0,0,0,.05);
+
+}
+
+/* ------- GENERAL ------- */
+html,body{
+  margin:0;
+  background:var(--bg);
+  font-family:'Inter',sans-serif;
+}
+
+.muted{color:var(--muted);}
+.small{font-size:12px}
+
+
+/* ------- HEADER PROFESIONAL ------- */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 36px;
+  background:#BB2424;
+  border-bottom:1px solid var(--border);
+}
+
+.brand h1{
+  margin:0;
+  font-size:30px;
+  font-weight:700;
+  color:rgba(255,255,255,.90);
+  letter-spacing:-0.2px;
+}
+
+
+.subtitle{
+  margin-top:6px;
+  font-size:15px;
+  color:rgba(0,0,0,.90);
+  letter-spacing:.3px;
+  color:#ffffff;
+  letter-spacing:.3px;
+  font-weight:500;
+}
+
+.topbar::after{
+  content:"";
+  display:block;
+  height:3px;
+  background:linear-gradient(to right, var(--primary), transparent);
+  margin-top:18px;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+
+.filebtn input{ display:none; }
+
+  .input{
+    padding:10px 14px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    font-size:14px;
+    background:#fff;
+    transition:all .2s ease;
+  }
+
+  .input:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(255,0,0,.08);
+  }
+
+.btn{
+  background:var(--primary-soft);
+  color:var(--primary);
+  border:1px solid var(--primary);
+  padding:9px 16px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+.btn:hover{
+  background:var(--primary);
+  color:white;
+  box-shadow:0 6px 18px rgba(198,40,40,.18);
+}
+
+
+
+
+/* ------- LAYOUT ------- */
+.layout{
+  display:grid;
+  grid-template-columns:200px 0.9fr 1.1fr;
+  gap:26px;
+  padding:28px;
+}
+
+
+
+
+
+.program-item{
+  padding:8px 12px;
+  border-radius:8px;
+  font-size:13px;
+  cursor:pointer;
+  color:var(--dark);
+  transition:all .18s ease;
+  border: 1px solid transparent;
+  text-align: left; /* importante */
+}
+
+.program-item:hover{
+  background:rgba(255,0,0,.05);
+}
+
+
+/* ------- CARDS AREA ------- */
+.cards-stack{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.card{
+  background:#ffffff;
+  padding:14px 18px;
+  border-radius:16px;
+  border:1px solid #F0F0F0;
+  box-shadow:0 6px 18px rgba(0,0,0,.04);
+  transition:all .25s ease;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 32px rgba(0,0,0,.08);
+}
+
+.card h3{ margin:0; font-size:14px; }
+
+.card .meta{
+  font-size:12px;
+  color:var(--muted);
+}
+
+
+/* ------- RIGHT PANEL ------- */
+.detail-area{
+  height:auto;              /* Que se expanda según contenido */
+  overflow:visible;         /* Sin scroll vertical */
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.detail-card{
+  background:#ffffff;
+  padding:48px 56px;
+  border-radius:22px;
+  border:1px solid #ECECEC;
+  box-shadow:0 18px 45px rgba(0,0,0,.06);
+  position:relative;
+}
+
+.detail-card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:5px;
+  background:linear-gradient(to right, var(--primary), #F87171);
+  border-top-left-radius:22px;
+  border-top-right-radius:22px;
+}
+
+.detail-body{
+  margin-top:24px;
+  font-size:14px;
+  line-height:1.65;
+}
+
+
+
+.detail-table th{
+  width:34%;
+  background:#eaf2ff;
+  padding:6px;
+  color:var(--primary);
+  border:1px solid rgba(0,0,0,.06);
+  vertical-align:top;
+}
+
+.detail-table td{
+  padding:6px;
+  border:1px solid rgba(0,0,0,.06);
+}
+
+
+/* ------- FOOTER ------- */
+.footer{
+  text-align:center;
+  font-size:13px;
+  color:var(--muted);
+  padding:20px;
+}
+
+.catalog-area {
+  max-width: 700px;
+}
+
+
+
+
+.left-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #6a6a6a;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.left-title .icon {
+  font-size: 16px;
+}
+
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.program-list .program-item {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #444;
+  border: 1px solid transparent;
+  transition: all 0.17s ease;
+}
+
+.program-list .program-item:hover {
+  background: #eef3ff;
+  border-color: #c8d7ff;
+}
+
+.program-list .program-item.active {
+  background: #C62828;
+  color: white;
+  border-color: #C62828;
+  font-weight: 600;
+}
+
+
+
+.pager {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  min-width: 70px;
+  font-weight: 600;
+  transition: all .18s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,.08);
+}
+
+.page-indicator {
+  font-weight: 600;
+  color: var(--primary);
+  padding: 0 10px;
+}
+
+
+/* ==========================
+   MODELO B – FICHA EJECUTIVA
+========================== */
+
+/* ==========================
+   DIVISIÓN INSTITUCIONAL FUERTE
+========================== */
+
+.modeloB-section{
+  margin-top:40px;
+  padding-top:28px;
+  border-top:2px solid var(--primary);
+}
+
+
+.modeloB-section h3{
+  font-size:16px;
+  font-weight:700;
+  color:#1e1e1e;
+  margin-bottom:12px;
+  position:relative;
+  padding-left:14px;
+}
+
+.modeloB-section h3{
+  font-size:17px;
+  font-weight:700;
+  color:#111827;
+  margin-bottom:18px;
+  position:relative;
+  padding-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+}
+
+/* Subrayado institucional grueso */
+.modeloB-section h3::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:60px;
+  height:3px;
+  background:var(--primary);
+  border-radius:2px;
+}
+
+.modeloB-subsection{
+  margin-top:22px;
+}
+
+.modeloB-subsection h4{
+  font-size:14px;
+  font-weight:600;
+  color:var(--primary);
+  margin-bottom:14px;
+  position:relative;
+  padding-bottom:6px;
+  letter-spacing:.2px;
+}
+
+/* Subrayado fino para subtítulos */
+.modeloB-subsection h4::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:40px;
+  height:2px;
+  background:rgba(198,40,40,.5);
+  border-radius:2px;
+}
+
+
+.modeloB-grid{
+  display:grid;
+  grid-template-columns: 200px 1fr;
+  gap:12px 20px;
+  font-size:14px;
+}
+
+.modeloB-grid div:nth-child(odd){
+  font-weight:600;
+  color:#555;
+}
+
+.modeloB-grid div:nth-child(even){
+  color:#1f1f1f;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.modeloB-text{
+  font-size:14px;
+  line-height:1.7;
+  color:#333;
+  text-align:justify;
+}
+
+
+/* =========================================
+   PAGER SUPERIOR ESTILO EJECUTIVO
+========================================= */
+
+.top-pager{
+  margin: 6px 0 4px 0;   
+  padding: 10px 16px;
+  background: #f4f6fb;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+}
+
+/* Botones más elegantes arriba */
+.top-pager .nav-btn{
+  background: white;
+  color: var(--primary);
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.top-pager .nav-btn:hover{
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255,0,0,.18);
+}
+
+/* Indicador más visible */
+.top-pager .page-indicator{
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--dark);
+}
+
+
+/* ======================================
+   TRANSICIÓN SUAVE ENTRE PÁGINAS
+====================================== */
+
+.cards-stack{
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.cards-stack.fade-out{
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.cards-stack.fade-in{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ======================================
+   NÚMEROS DE PÁGINA PROFESIONALES
+====================================== */
+
+.page-numbers{
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+
+.page-number{
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+  border:1px solid rgba(0,0,0,.08);
+  background:white;
+  transition:all .18s ease;
+}
+
+.page-number:hover{
+  background:rgba(255,0,0,.08);
+}
+
+.page-number.active{
+  background:var(--primary);
+  color:white;
+  font-weight:600;
+  border-color:var(--primary);
+}
+
+
+
+
+.service-code-box {
+  width:64px;
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:800;
+  background:var(--primary-soft);
+  color:var(--primary);
+  border-radius:14px;
+  margin-bottom:16px;
+  box-shadow: 0 6px 18px rgba(198,40,40,.18);
+}
+
+.service-title {
+  font-size:22px;
+  font-weight:700;
+  line-height:1.35;
+  color:#1f1f1f;
+  margin-top:6px;
+}
+
+
+
+.card-badge{
+  font-size:11px;
+  padding:3px 8px;
+}
+
+
+.card-enum{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.enum-box{
+  width:54px;
+  height:54px;
+  min-width:54px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:20px;
+  font-weight:800;
+
+  background:linear-gradient(
+    135deg,
+    var(--primary),
+    #A61B1B
+  );
+
+  color:#ffffff;
+  border-radius:14px;
+
+  box-shadow:0 8px 20px rgba(198,40,40,.25);
+}
+
+
+.card-content h3{
+  font-size:13px;
+}
+
+.card-content{
+  flex:1;
+}
+
+.meta-box{
+  background:#F9FAFB;
+  padding:14px 18px;
+  border-radius:14px;
+  border:1px solid #E5E7EB;
+  font-size:13px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  margin-top:18px;
+  color:#374151;
+}
+
+.meta-divider {
+  opacity: 0.5;
+}
+
+
+/* ==============================
+   CABECERA CON LOGO ALINEADO
+============================== */
+
+.detail-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+}
+
+.detail-title-block{
+  flex:1;
+}
+
+.detail-logo-inline img{
+  max-height:65px;
+  max-width:200px;
+  object-fit:contain;
+}
+
+/* =====================================
+   PANEL IZQUIERDO DIVIDIDO EN BLOQUES
+===================================== */
+
+.leftpanel{
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ===== BASE DEL BLOQUE ===== */
+.panel-box{
+  background:#ffffff;
+  padding:22px 18px;
+  border-radius:18px;
+  border:1px solid #EAEAEA;
+  box-shadow:0 12px 30px rgba(0,0,0,.04);
+  position:relative;
+}
+
+/* BANDA SUPERIOR DIFERENCIADORA */
+.panel-box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+
+/* ===== PROVEEDORES ===== */
+.proveedores-box::before{
+  background: var(--primary);
+}
+
+/* ===== TIPO DE SERVICIO ===== */
+.tipos-box::before{
+  background: #2563EB; /* azul elegante */
+}
+
+/* ===== TÍTULOS ===== */
+.left-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #111827;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  position: relative;
+  text-align: center;
+  display: block;
+}
+
+.left-title::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:40px;
+  height:2px;
+  background:var(--primary);
+}
+
+/* ===== LISTA ===== */
+.program-list{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  
+}
+
+/* ===== ITEMS ===== */
+.program-item{
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #444;
+  transition: all .18s ease;
+  border: 1px solid transparent;
+}
+
+.program-item:hover{
+  background: #F6F8FC;
+  border-color: #E2E8F0;
+}
+
+.program-item.active{
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(198,40,40,.18);
+}
+
+
+.detalle-lista{
+  margin-top: 12px;
+  padding-left: 22px;
+}
+
+.detalle-lista li{
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+
+.detalle-lista li::marker{
+  color: var(--primary);
+}
+
+
+.pager-info{
+  text-align:center;
+  margin-top:8px;
+  font-size:13px;
+  color:#6B7280;
+  font-weight:600;
+}
+
+
+.top-pager-wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;          
+  margin:6px 0 10px 0;
+}
+
+.pager-info-top{
+  margin-top:2px;   /* casi pegado */
+  font-size:13px;
+  font-weight:600;
+  color:#6B7280;
+  text-align:center;
+}
+
+.detalle-lista-proveedor{
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: square;
+}
+
+.detalle-lista-proveedor li{
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+
+
+/* ==============================
+   CARD ACTIVA (SELECCIONADA)
+============================== */
+
+.card.active {
+  background-color: #c6c6c6; /* gris institucional tenue */
+  border: 1px solid #d9dde3;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
+}
+
+/* Mantener el rojo institucional en el número */
+.card.active .enum-box {
+  transform: scale(1.05);
+}
+
+
+
+
+
+#categoriaPublicoTopList .program-item{
+
+  flex:1 1 9%;                 /* se distribuyen proporcionalmente */
+  min-width:120px;             /* evita que se aplasten */
+  max-width:100%;
+
+  min-height:56px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;           /* centrado real */
+  line-height:1.25;
+
+  padding:10px 8px;
+
+  border:1px solid #d1d5db;
+  border-radius:14px;
+
+  background:#ffffff;
+  cursor:pointer;
+  transition:all .2s ease;
+}
+
+
+
+.top-program-list .program-item:hover{
+  background:#ffe5e5;
+  border-color:#ff0000;
+}
+
+.top-program-list .program-item.active{
+  background:#ff0000;
+  color:#ffffff;
+  border-color:#ff0000;
+}
+
+
+
+/* ===== BARRA HORIZONTAL CATEGORÍA DEL PÚBLICO ===== */
+
+.categoria-top-list{
+  display:flex;
+  gap:8px;
+  flex-wrap:nowrap;          /* ← todo en una sola línea */
+  overflow-x:auto;           /* ← si no entra, scroll horizontal suave */
+  padding-bottom:4px;
+  scrollbar-width:thin;
+}
+
+
+
+/* Botones estilo institucional */
+.categoria-top-list .program-item{
+  flex:0 0 auto;             /* ← evita que se expandan verticalmente */
+  white-space:nowrap;        /* ← texto en una sola línea */
+  padding:6px 14px;
+  font-size:12px;
+  border-radius:20px;        /* estilo pill */
+  border:1px solid #E5E7EB;
+  background:#ffffff;
+  color:#444;
+  transition:all .2s ease;
+}
+
+/* Hover elegante */
+.categoria-top-list .program-item:hover{
+  background:#F9FAFB;
+  border-color:#d1d5db;
+}
+
+/* Activo institucional */
+.categoria-top-list .program-item.active{
+  background:#b71c1c;        /* rojo institucional elegante */
+  color:#ffffff;
+  border-color:#b71c1c;
+  box-shadow:0 3px 10px rgba(255,0,0,.18);
+}
+
+
+#categoriaPublicoTopList .program-item:hover{
+  background:#ffe5e5;
+  border-color:#ff0000;
+}
+
+#categoriaPublicoTopList .program-item.active{
+  background:#b71c1c;
+  color:#ffffff;
+  border-color:#b71c1c;
+  box-shadow:0 3px 10px rgba(255,0,0,.18);
+}
+
+
+/* ==========================================
+   BARRA HORIZONTAL – CATEGORÍA DEL PÚBLICO
+========================================== */
+
+.top-categoria-panel{
+  background:#ffffff;
+  padding:18px 24px;
+  border-bottom:1px solid #e5e7eb;
+}
+
+/* CONTENEDOR */
+#categoriaPublicoTopList{
+  display:grid;
+  grid-auto-flow:column;          /* 🔥 todos en una sola fila */
+  grid-auto-columns:1fr;          /* 🔥 todos se reparten el ancho */
+  gap:8px;
+  width:100%;
+}
+
+/* BOTONES */
+#categoriaPublicoTopList .program-item{
+  text-align:center;
+  padding:8px 10px;
+  font-size:12px;
+  border-radius:14px;
+  border:1px solid #E5E7EB;
+  background:#ffffff;
+  color:#444;
+  transition:all .2s ease;
+
+  white-space:normal;          /* 🔥 ahora sí permite salto */
+  line-height:1.2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;             /* altura uniforme elegante */
+}
+
+
+/* Hover */
+#categoriaPublicoTopList .program-item:hover{
+  background:#F9FAFB;
+  border-color:#d1d5db;
+}
+
+/* Activo institucional */
+#categoriaPublicoTopList .program-item.active{
+  background:#b71c1c;
+  color:#ffffff;
+  border-color:#b71c1c;
+  box-shadow:0 3px 10px rgba(255,0,0,.18);
+}
+.program-item.disabled{
+  opacity: .45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.no-results{
+  text-align:center;
+  padding:60px 20px;
+  color:#6b7280;
+}
+
+.no-results-icon{
+  font-size:42px;
+  margin-bottom:12px;
+  opacity:.6;
+}
+
+.no-results-text{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.no-results-sub{
+  font-size:14px;
+  opacity:.8;
+}
+
+.no-results-detail{
+  text-align:center;
+  padding:40px 10px;
+  color:#6b7280;
+  font-style:italic;
+}
+
+
+/* Animación suave */
+.fade-in{
+  animation: fadeIn .35s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform:translateY(6px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+/* Estado sin resultados */
+.no-results{
+  text-align:center;
+  padding:70px 20px;
+  color:#6b7280;
+}
+
+.no-results-icon{
+  font-size:44px;
+  margin-bottom:14px;
+  opacity:.6;
+}
+
+.no-results-text{
+  font-size:16px;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.no-results-sub{
+  font-size:14px;
+  margin-bottom:18px;
+  opacity:.85;
+}
+
+/* Botón institucional */
+.reset-btn{
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:8px 18px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.reset-btn:hover{
+  opacity:.9;
+  transform:translateY(-1px);
+}
+
+/* Panel derecho vacío */
+.empty-detail{
+  text-align:center;
+  padding:60px 10px;
+  color:#6b7280;
+}
+
+.empty-detail-icon{
+  font-size:36px;
+  margin-bottom:10px;
+  opacity:.6;
+}
+
+.empty-detail-text{
+  font-size:14px;
+  font-style:italic;
+}
+
+
+/* ==============================
+   EXPORTAR A EXCEL
+============================== */
+
+.catalog-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.export-btn{
+  background:#107C41; /* verde Excel */
+  color:white;
+  border:none;
+  padding:8px 16px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  transition:all .2s ease;
+}
+
+.export-btn:hover{
+  background:#0e6d39;
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(16,124,65,.25);
+}
+
+.export-btn:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
+
+/* Link institucional debajo del subtítulo */
+.normativa-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #666;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.normativa-link:hover {
+  color: #9b1c31; /* rojo institucional más sobrio */
+  text-decoration: underline;
+}
+
+
+/* Botón normativa sutil */
+.btn-normativa {
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn-normativa:hover {
+  background: #f5f5f5;
+  border-color: #9b1c31;
+  color: #9b1c31;
+}
